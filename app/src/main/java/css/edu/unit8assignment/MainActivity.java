@@ -122,18 +122,37 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.navAdd) {
+            Snackbar.make(getWindow().getDecorView(), "Adding study mates is not available yet.", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null)
+                    .show();
+            return true;
+        } else if (id == R.id.navDelete) {
+            Snackbar.make(getWindow().getDecorView(), "Deleting a study mates is not available yet.", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null)
+                    .show();
+            return true;
+        } else if (id == R.id.navEmail) {
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setType("*/*");
+            if (emailIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(emailIntent);
+            }
+            return true;
+        } else if (id == R.id.navText) {
+            Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+            sendIntent.setData(Uri.parse("sms:6123279302"));
+            sendIntent.putExtra("sms_body", "");
+            if (sendIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(sendIntent);
+            }
+            return true;
+        } else if (id == R.id.navSettings) {
+            Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
+            if (settingsIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(settingsIntent);
+            }
+            return true;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

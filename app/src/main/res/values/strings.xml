@@ -10,4 +10,9 @@
     <string name="ActionDelete">Delete</string>
     <string name="ActionEmail">Email</string>
     <string name="ActionTextMessage">Text Message</string>
+    <string name="navAdd">Add</string>
+    <string name="navDelete">Delete</string>
+    <string name="navSettings">Settings</string>
+    <string name="navEmail">Email</string>
+    <string name="navText">Text Message</string>
 </resources>
